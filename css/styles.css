@@ -112,7 +112,7 @@ body {
 }
 
 .current::after {
-  content: " ";
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -172,7 +172,7 @@ body {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/icons.svg/name.jpg);
+    url(../images/img-name.jpg);
   max-width: 1440px;
   background-repeat: no-repeat;
   background-position: center;
@@ -420,6 +420,9 @@ body {
   align-items: center;
   justify-content: center;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #8e8f99;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-item-link:is(:hover, :focus) {
@@ -438,6 +441,10 @@ body {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   margin-bottom: 72px;
+}
+
+.customers-item {
+  width: calc((100% - 120px) / 6);
 }
 
 .customers-svg {
@@ -629,12 +636,14 @@ body {
 .offers-item-link:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  transform: translateY(0%);
 }
 
 .offers-item-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.offers-item-link:is(:hover, :focus).offers-cover-text {
   transform: translateY(0%);
 }
 
@@ -644,7 +653,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--icon);
+  color: #f4f4fd;
   padding: 40px 32px;
   background-color: #4d5ae5;
   height: 100%;
@@ -684,11 +693,13 @@ body {
   border-radius: 4px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(1);
+
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .close-icon {
@@ -715,13 +726,7 @@ body {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-btn:hover {
-  background-color: #404bbf;
-  fill: #ffffff;
-  border: none;
-}
-
-.modal-btn:focus {
+.modal-btn:is(:hover, :focus).close-icon {
   background-color: #404bbf;
   fill: #ffffff;
   border: none;
