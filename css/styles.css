@@ -605,10 +605,6 @@ body {
   width: calc((100% - 24px * 2) / 3);
 }
 
-.offers-item:hover.offers-cover-text {
-  transform: translateY(0%);
-}
-
 .offers-title {
   color: var(--accent-color);
   font-size: 20px;
