@@ -683,6 +683,7 @@ body {
 }
 
 .modal {
+  position: fixed;
   width: 408px;
   min-height: 584px;
   background-color: #fcfcfc;
@@ -722,12 +723,12 @@ body {
 
 .modal-btn:hover,
 .modal-btn:focus {
-  background-color: var(--actions);
+  background-color: #404bbf;
   border: none;
 }
 .modal-btn:hover,
 .modal-btn:focus {
-  fill: var(--white-background);
+  fill: #ffffff;
 }
 
 .is-hidden {
